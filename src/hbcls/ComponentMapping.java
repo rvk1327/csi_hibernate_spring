@@ -3,16 +3,20 @@ package hbcls;
 import org.hibernate.*;
 import org.hibernate.cfg.*;
 
-public class StudentRegister {
+public class ComponentMapping {
     
     public static void main(String[] str) {
         
-        Student st = new Student();
-        st.setRollno("st-3");
-        st.setStname("ghi");
-        st.setRank(3);
-        st.setMark(93.28);
+        Address addr = new Address();
+        addr.setCity("OOTY");
+        addr.setStreet("Ketti Street");
+        addr.setPincode("123456");
         
+        Staff staff = new Staff();
+        staff.setStaff_id("S-1");
+        staff.setStaff_name("ABC");
+        staff.setDepartment("CSE");
+        staff.setAddress(addr);
         
         Configuration con = new Configuration();
         con.configure("hbcls/csi.cfg.xml");
@@ -20,12 +24,10 @@ public class StudentRegister {
         SessionFactory sf = con.buildSessionFactory();
         Session ses = sf.openSession();
         Transaction t = ses.beginTransaction();
-        
-        
-        ses.persist(st);
+        ses.persist(staff);
         
         t.commit();
         ses.close();
-        //sf.close();
+        sf.close();
     }
 }

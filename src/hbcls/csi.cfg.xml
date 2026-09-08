@@ -9,5 +9,20 @@
         <property name="hibernate.connection.url">jdbc:mysql://localhost/csi</property>
         <property name="hibernate.connection.username">root</property>
         <mapping class="hbcls.Student"></mapping>
+        <mapping class="hbcls.Employee"></mapping>
+        <mapping class="hbcls.Permanent"></mapping>
+        <mapping class="hbcls.Contract"></mapping>
+        <mapping class="hbcls.Staff"></mapping>
+        <mapping class="hbcls.Address"></mapping>
+        <mapping class="hbcls.Patient"></mapping>
+        <mapping class="hbcls.Medical"></mapping>
+        <mapping class="hbcls.Google"></mapping>
+        <mapping class="hbcls.People"></mapping>
+        <mapping class="hbcls.Customer"></mapping>
+        <mapping class="hbcls.Shop"></mapping>
+        <mapping class="hbcls.Library"></mapping>
+        <mapping class="hbcls.Book"></mapping>
+        <mapping class="hbcls.Teacher"></mapping>
+        <mapping class="hbcls.Subject"></mapping>
     </session-factory>
 </hibernate-configuration>
