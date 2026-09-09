@@ -24,5 +24,6 @@
         <mapping class="hbcls.Book"></mapping>
         <mapping class="hbcls.Teacher"></mapping>
         <mapping class="hbcls.Subject"></mapping>
+        <mapping class="hbcls.QuestionAndAnswer"></mapping>
     </session-factory>
 </hibernate-configuration>

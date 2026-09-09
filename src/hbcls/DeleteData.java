@@ -3,26 +3,24 @@ package hbcls;
 import org.hibernate.*;
 import org.hibernate.cfg.*;
 
-public class StudentRegister {
+public class DeleteData {
     
     public static void main(String[] str) {
         
-        Student st = new Student();
-        st.setRollno("st-4");
-        st.setStname("jkl");
-        st.setRank(2);
-        st.setMark(95.68);
+        java.util.Scanner sc = new java.util.Scanner(System.in);
         
+        System.out.println("Enter Roll No : ");
+        String rno = sc.nextLine();
         
         Configuration con = new Configuration();
         con.configure("hbcls/csi.cfg.xml");
-        
         SessionFactory sf = con.buildSessionFactory();
         Session ses = sf.openSession();
         Transaction t = ses.beginTransaction();
         
-        
-        ses.persist(st);
+        Query q = ses.createQuery("delete from Student where rollno=:r");
+        q.setString("r", rno);
+        q.executeUpdate();
         
         t.commit();
         ses.close();
